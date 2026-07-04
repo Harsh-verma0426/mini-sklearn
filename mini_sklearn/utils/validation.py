@@ -1,15 +1,24 @@
 import numpy as np
+    
+def check_numeric(array):
+    # 'i' = integer, 'f' = float, 'u' = unsigned int
+    if array.dtype.kind not in ('i', 'f', 'u'):
+        raise TypeError(f"Expected numeric data, but got text/object data type: {array.dtype}")
 
-def check_numpy_array(array):
-
+def convert_into_array(array):
+    
     if not isinstance(array, np.ndarray):
-        raise TypeError("Expected Array")
-    
-def check_2d_array(array):
+        array = np.asarray(array)
 
-    if array.ndim != 2:
-        raise ValueError(f"Expected 2D array, got {array.ndim}D array instead")
-    
+    return array
+
+def make_2D(X):
+
+    if X.ndim == 1:
+            X = X.reshape(-1, 1)
+
+    return X
+
 def check_1d_array(array):
 
     if array.ndim != 1:
@@ -27,19 +36,31 @@ def check_not_empty(array):
     
 def check_X_y(X, y):
 
-    check_numpy_array(X)
-    check_numpy_array(y)
-    check_2d_array(X)
-    check_1d_array(y)
+    X = convert_into_array(X)
+    y = convert_into_array(y)
+
     check_not_empty(X)
     check_not_empty(y)
+    check_numeric(X)
+    check_numeric(y)
+
+    X = make_2D(X)
+
+    check_1d_array(y)
     check_same_number_of_samples(X, y)
+
+    return X, y
 
 def check_X(X):
 
-    check_numpy_array(X)
-    check_2d_array(X)
+    X = convert_into_array(X)
+
     check_not_empty(X)
+    check_numeric(X)
+
+    X = make_2D(X)
+
+    return X
     
 def check_is_fitted(is_fitted):
 
