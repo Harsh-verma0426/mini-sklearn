@@ -48,36 +48,6 @@ Detailed implementation notes for each algorithm are available in the `docs/` di
 
 ---
 
-## Project Structure
-
-```text
-mini_sklearn/
-│
-├── linear_model.py
-├── neighbors.py
-├── tree.py
-├── metrics.py
-├── model_selection.py
-└── __init__.py
-
-docs/
-├── linear_regression.md
-├── logistic_regression.md
-├── decision_tree.md
-├── knn_classifier.md
-└── knn_regressor.md
-
-tests/
-├── test_linear_regression.py
-├── test_logistic_regression.py
-├── test_knn_classifier.py
-├── test_knn_regressor.py
-├── test_decision_tree.py
-└── test_metrics.py
-```
-
----
-
 ## Installation
 
 Clone the repository:
@@ -142,7 +112,7 @@ python -m pytest
 * [x] K-Nearest Neighbors Classifier
 * [x] K-Nearest Neighbors Regressor
 * [x] Decision Tree Classifier
-* [ ] Random Forest
+* [X] Random Forest
 * [ ] Gaussian Naive Bayes
 * [ ] K-Means
 * [ ] Principal Component Analysis (PCA)
@@ -153,9 +123,9 @@ python -m pytest
 ### Utilities
 
 * [x] Train-Test Split
-* [ ] StandardScaler
-* [ ] MinMaxScaler
-* [ ] LabelEncoder
+* [X] StandardScaler
+* [X] MinMaxScaler
+* [X] LabelEncoder
 * [ ] OneHotEncoder
 * [ ] K-Fold Cross Validation
 * [ ] Grid Search
