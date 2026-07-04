@@ -6,6 +6,7 @@ from .validation import (
     check_not_empty,
     check_X_y,
     check_X,
+    check_y,
     check_is_fitted,
     check_feature_count,
     check_max_features

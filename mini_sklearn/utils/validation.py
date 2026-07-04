@@ -61,6 +61,14 @@ def check_X(X):
     X = make_2D(X)
 
     return X
+
+def check_y(y):
+
+    y = convert_into_array(y)
+    check_not_empty(y)
+    check_1d_array(y)
+
+    return y
     
 def check_is_fitted(is_fitted):
 
