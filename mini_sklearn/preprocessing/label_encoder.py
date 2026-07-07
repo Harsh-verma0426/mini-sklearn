@@ -17,9 +17,11 @@ class LabelEncoder:
         X = check_y(X)
 
         self.classes_ = np.unique(X)
-        idx = np.arange(self.classes_.size)
-        self.class_to_index_ = dict(zip(self.classes_, idx))
-        self.index_to_class_ = dict(zip(idx, self.classes_))
+        # idx = np.arange(self.classes_.size)
+        # self.class_to_index_ = dict(zip(self.classes_, idx))
+        # self.index_to_class_ = dict(zip(idx, self.classes_))
+        self.class_to_index_ = {label: idx for idx, label in enumerate(self.classes_)}
+        self.index_to_class_ = {idx: label for idx, label in enumerate(self.classes_)}
 
         self.is_fitted_ = True
 
