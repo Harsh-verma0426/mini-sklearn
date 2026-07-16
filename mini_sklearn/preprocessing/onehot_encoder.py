@@ -4,7 +4,7 @@ from ..utils import (check_y,
                      check_is_fitted
                      )
                      
-class LabelEncoder:
+class OneHotEncoder:
 
     def __init__(self):
         self.classes_ = []
